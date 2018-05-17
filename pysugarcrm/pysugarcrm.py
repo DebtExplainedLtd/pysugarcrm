@@ -116,7 +116,7 @@ class SugarCRM(object):
         """
 
         return self._api_request(
-            "GET", path, query=urllib.urlencode(query_params or {})
+            "GET", path, query=urllib.parse.urlencode(query_params or {})
         )
 
     def post(self, path, query_params=None, *args, **kwargs):
@@ -125,7 +125,7 @@ class SugarCRM(object):
         """
 
         return self._api_request(
-            "POST", path, query=urllib.urlencode(query_params or {}),
+            "POST", path, query=urllib.parse.urlencode(query_params or {}),
             *args, **kwargs
         )
 
@@ -135,7 +135,7 @@ class SugarCRM(object):
         """
 
         return self._api_request(
-            "PUT", path, query=urllib.urlencode(query_params or {}),
+            "PUT", path, query=urllib.parse.urlencode(query_params or {}),
             *args, **kwargs
         )
 
